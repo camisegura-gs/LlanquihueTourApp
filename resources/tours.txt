@@ -1,0 +1,6 @@
+Isla Huar;Calbuco;Lacustre;45000
+Ruta del Salmón;Puerto Montt;Gastronomico;35000
+Saltos del Petrohué;Ensenada;Cultural;28000
+Volcán Osorno y Laguna Verde;Puerto Varas;Cultural;50000
+Sabores de Frutillar;Frutillar;Gastronomico;40000
+Navegación Lago Llanquihue;Llanquihue;Lacustre;30000
