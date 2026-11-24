@@ -8,12 +8,13 @@ public class Tour {
     private String ubicacion;
     private String tipo;
     private int precio;
+    private Guia guia; // Composición: el Tour se relaciona con un Guia
 
     // Constructor vacío
     public Tour() {
     }
 
-    // Constructor con parámetros
+    // Constructor sin guía (compatibilidad)
     public Tour(String nombre, String ubicacion, String tipo, int precio) {
         this.nombre = nombre;
         this.ubicacion = ubicacion;
@@ -21,7 +22,15 @@ public class Tour {
         this.precio = precio;
     }
 
-    // Getters y Setters
+    // Constructor con composición de Guia
+    public Tour(String nombre, String ubicacion, String tipo, int precio, Guia guia) {
+        this.nombre = nombre;
+        this.ubicacion = ubicacion;
+        this.tipo = tipo;
+        this.precio = precio;
+        this.guia = guia;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -54,9 +63,18 @@ public class Tour {
         this.precio = precio;
     }
 
+    public Guia getGuia() {
+        return guia;
+    }
+
+    public void setGuia(Guia guia) {
+        this.guia = guia;
+    }
+
     @Override
     public String toString() {
-        return String.format("Tour: %-28s | Ubicación: %-14s | Tipo: %-13s | Precio: $%,d",
-                nombre, ubicacion, tipo, precio);
+        String infoGuia = (guia != null) ? guia.toString() : "Sin guía asignado";
+        return String.format("Tour: %-26s | Ubicación: %-14s | Tipo: %-12s | Precio: $%,d | Guía: %s",
+                nombre, ubicacion, tipo, precio, infoGuia);
     }
 }
