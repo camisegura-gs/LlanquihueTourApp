@@ -1,16 +1,21 @@
 # LlanquihueTourApp
 
 ## Descripción
-Aplicación en Java desarrollada para **Llanquihue Tour**, encargada de leer información turística desde un archivo externo de texto plano (`.txt`), procesarla mediante la separación de cadenas con `.split(";")`, almacenarla en una colección dinámica (`ArrayList`) y mostrar recorridos y filtros en consola.
+Aplicación en Java desarrollada para **Llanquihue Tour** (Región de Los Lagos), enfocada en apoyar la gestión operativa y turística de la agencia. El sistema lee registros desde un archivo externo de texto plano (`.txt`), valida la información, evita duplicados, aplica programación orientada a objetos con composición entre clases (`Tour` y `Guia`), almacena los objetos en una colección dinámica (`ArrayList`) y muestra recorridos, búsquedas y filtros por consola[cite: 1].
 
-## Estructura de Paquetes y Carpetas
-* `model/`: Contiene la clase `Tour` con sus atributos, constructores, getters, setters y `toString()`.
-* `data/`: Contiene la clase `GestorDatos` encargada de la lectura del archivo y el parseo de datos.
-* `ui/`: Contiene la clase `Main` que ejecuta la interfaz de consola y aplica los filtros de negocio.
-* `resources/`: Almacena el archivo plano `tours.txt`.
+## Paquetes y Clases Implementadas
+* `model`:[cite: 1, 2]
+  * `Guia.java`: Representa al guía u operador vinculado a la operación, con atributos `private`, constructores, getters/setters y `toString()`[cite: 1, 2].
+  * `Tour.java`: Representa el servicio turístico e integra composición mediante un atributo `Guia`, además de encapsulamiento, constructores, getters/setters y `toString()`[cite: 1, 2].
+* `data`:[cite: 1, 2]
+  * `GestorDatos.java`: Lee el archivo externo mediante `BufferedReader` con manejo de excepciones (`try-catch`), valida datos, evita duplicados, arma la colección `ArrayList<Tour>` y entrega métodos de búsqueda/filtrado[cite: 1].
+* `ui`:[cite: 1, 2]
+  * `Main.java`: Clase principal (`main`) que inicia la ejecución, recorre el catálogo completo y aplica filtros por tipo y ubicación en consola[cite: 1].
+* `resources`:[cite: 1]
+  * `tours.txt`: Archivo de datos externos separado por punto y coma (`;`).
 
 ## Instrucciones para Ejecutar
-1. Clonar o descargar el repositorio.
-2. Abrir el proyecto en IntelliJ IDEA.
-3. Asegurarse de que el archivo `tours.txt` esté ubicado en la carpeta `resources/`.
-4. Ejecutar la clase `Main.java` ubicada en el paquete `ui`.
+1. Clonar o descargar el repositorio desde GitHub[cite: 1].
+2. Abrir el proyecto en **IntelliJ IDEA** (con JDK configurado)[cite: 1].
+3. Verificar que el archivo `tours.txt` se encuentre en la carpeta `resources/tours.txt`[cite: 1].
+4. Ejecutar el método `main` de la clase `ui.Main`[cite: 1, 2].
